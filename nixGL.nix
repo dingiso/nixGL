@@ -221,7 +221,6 @@ let
         runCommand "impure-nvidia-version-file" {
           # To avoid sharing the build result over time or between machine,
           # Add an impure parameter to force the rebuild on each access.
-          time = builtins.currentTime;
           preferLocalBuild = true;
           allowSubstitutes = false;
         } "cp /proc/driver/nvidia/version $out 2> /dev/null || touch $out";
